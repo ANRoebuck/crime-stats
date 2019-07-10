@@ -15,17 +15,11 @@ class App extends Component {
   };
   render() {
     return (
-      <div>
-        <div className="App">
-          <Heading search={this.state.search} />
-          <Search updateSearch={this.updateSearch} />
-          <div>
-            <Chart crimes={this.state.crimes} />
-          </div>
-        </div>
-        <div>
-          <Table crimes={this.state.crimes} />
-        </div>
+      <div className="App">
+        <Heading search={this.state.search} />
+        <Search updateSearch={this.updateSearch} />
+        <Chart crimes={this.state.crimes} />
+        <Table crimes={this.state.crimes} />
       </div>
     );
   }

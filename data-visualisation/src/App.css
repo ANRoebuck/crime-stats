@@ -1,22 +1,74 @@
-* {
-  background-color: aliceblue;
-}
-
-h1 {
-  font-size: 60px;
-}
-
 .App {
   text-align: center;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: 1fr 2fr 5fr;
+  grid-template-areas:
+    "heading heading"
+    "search resultsTable"
+    "chart resultsTable";
+  font-family: "Cantarell", serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.heading {
+  grid-area: heading;
+  border: solid 1px black;
+  font-size: 2.5em;
+}
+
+.searchArea {
+  text-transform: capitalize;
+  font-style: italic;
+  font-weight: 200;
+}
+
+.search {
+  grid-area: search;
+  border: solid 1px green;
+}
+
+.resultsTable {
+  grid-area: resultsTable;
+  overflow-y: auto;
+  border: solid 1px orange;
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.resultsTable thead th {
+  position: sticky;
+  top: 0;
+  background-color: black;
   color: white;
 }
+
+.tableContents {
+  width: 100%;
+}
+
+.chart {
+  grid-area: chart;
+  border: solid 1px red;
+}
+
+/* input[type="text"] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url("searchicon.png");
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type="text"]:focus {
+  width: 100%;
+} */

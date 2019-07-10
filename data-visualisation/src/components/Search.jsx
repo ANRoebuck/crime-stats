@@ -7,7 +7,7 @@ class Search extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form className="search" onSubmit={this.handleSubmit}>
           <input
             type="text"
             placeholder="Enter Postcode"

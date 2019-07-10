@@ -23,12 +23,9 @@ const Chart = ({ crimes }) => {
   };
 
   return (
-    <Pie
-      data={data}
-      width={350}
-      height={350}
-      options={{ maintainAspectRatio: false }}
-    />
+    <div className="chart">
+      <Pie data={data} />
+    </div>
   );
 };
 export default Chart;

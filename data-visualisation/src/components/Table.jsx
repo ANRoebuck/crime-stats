@@ -2,20 +2,26 @@ import React from "react";
 
 const Table = ({ crimes }) => {
   return (
-    <table className="resultsTable">
-      <tr>
-        <th>Category</th>
-        <th>Location</th>
-      </tr>
-      {crimes.map(crime => {
-        return (
+    <div className="resultsTable">
+      <table className="tableContents">
+        <thead>
           <tr>
-            <td>{crime.category}</td>
-            <td>{crime.location.street.name}</td>
+            <th>Category</th>
+            <th>Location</th>
           </tr>
-        );
-      })}
-    </table>
+        </thead>
+        <tbody>
+          {crimes.map(crime => {
+            return (
+              <tr>
+                <td>{crime.category}</td>
+                <td>{crime.location.street.name}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
   );
 };
 
