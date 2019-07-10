@@ -1,8 +1,31 @@
-import React from "react";
+import React, { Component } from "react";
 import Pie from "react-chartjs-2";
 import faker from "faker";
 
+
+// class Chart extends Component {
+
+//   state = {
+//     display: 'category'
+//   };
+
+//   render () {
+//     return (
+//       <div className="chart">
+//         <Pie
+//           data={data}
+//         />
+//         <h2 className="totalCrimes">
+//           {crimes.length > 0 ? `Total: ${crimes.length}` : null}
+//         </h2>
+//       </div>
+//     );
+//   }
+
+// };
+
 const Chart = ({ crimes }) => {
+
   const tally = crimes.reduce((acc, crime) => {
     acc[crime.category] = (acc[crime.category] || 0) + 1;
     return acc;
@@ -24,7 +47,12 @@ const Chart = ({ crimes }) => {
 
   return (
     <div className="chart">
-      <Pie data={data} />
+      <Pie
+        data={data}
+      />
+      <h2 className="totalCrimes">
+        {crimes.length > 0 ? `Total: ${crimes.length}` : null}
+      </h2>
     </div>
   );
 };

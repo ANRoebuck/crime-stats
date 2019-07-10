@@ -12,12 +12,21 @@ const Table = ({ crimes }) => {
         </thead>
         <tbody>
           {crimes.map(crime => {
+            const category =
+            crime.category
+              .split('-')
+              .map(word => word[0].toUpperCase() + word.slice(1))
+              .join(' ');
+            const location = 
+            crime.location.street.name.replace('On or near ', '');
+
             return (
               <tr>
-                <td>{crime.category}</td>
-                <td>{crime.location.street.name}</td>
+                <td>{category}</td>
+                <td>{location}</td>
               </tr>
             );
+
           })}
         </tbody>
       </table>
