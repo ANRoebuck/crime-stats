@@ -34,6 +34,7 @@ const Chart = ({ crimes }) => {
   const labels = Object.keys(tally);
   const chartData = labels.map(label => tally[label]);
   const chartColours = labels.map(label => faker.commerce.color());
+  console.log(chartColours);
 
   const data = {
     labels,

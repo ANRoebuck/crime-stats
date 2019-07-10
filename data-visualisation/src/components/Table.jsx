@@ -11,7 +11,7 @@ const Table = ({ crimes }) => {
           </tr>
         </thead>
         <tbody>
-          {crimes.map(crime => {
+          {crimes.map((crime, index) => {
             const category =
             crime.category
               .split('-')
@@ -21,7 +21,7 @@ const Table = ({ crimes }) => {
             crime.location.street.name.replace('On or near ', '');
 
             return (
-              <tr>
+              <tr key={`tr${index}`}>
                 <td>{category}</td>
                 <td>{location}</td>
               </tr>
